@@ -1,398 +1,75 @@
-/* *{ 
-
-    outline: 1px dotted red;
-} */
-
-/* Base do css */
-
-body{
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/cadastro.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    <main>
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <div class="titulo">
+                            <a href="../../index.html">
+                                <img src="../Images/Savings-pana.svg" alt="user guardando dinheiro">
+                            </a>                            
+                            <h3>Cadastro</h3>
+                        </div>
+                        <form class="requires-validation" novalidate>
     
-    margin: 0;
-    background: linear-gradient(162.52deg, #5CC866 -3.71%, #30D941 -3.71%, #0E3E13 100.67%);
-    width: 100vw;
-    height: 100vh;
-    font-family: 'Orbit', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
-}
-
-input#1.form-control{
-    align-items: right;
-}
-
-input.form-control {
-    align-items: right;
-    width: 300px;
-    margin-left: auto;
-}
-
-
-label{
-    font-size: 16px;
-    }
-
-div {
-    color:azure
-}
-div h3{
-    font-size: 50px;
-    text-align: right;
-}
-
-main{
-    display: inline-grid;
-    width: 50%;
-    max-width: 500px;
-    padding: 50px;
-    /* height: 80%; */
-    justify-items: center;
-    background-color: #249B46;
-    border-radius: 45px;
+                            <div class="col-md-12">
+                                <label value="1">Usuario</label>
+                                <input class="form-control" type="text" name="name" placeholder="Nome" required id="1">
+                                <div class="valid-feedback">Nome de usuário válido!</div>
+                                <div class="invalid-feedback">Usuário não pode ser vazio.</div>
+                            </div>
     
-}
-
-#form-check{
-    margin-top: 200px;
-}
-
-/* espaçamento entre as divs */
-.requires-validation div{
-    /* border: red solid 1px; */
-    gap: 30px;
-    margin-top: 10px;
-}
-
-.titulo{
-    display: flex;
-    align-items: flex-end;
-}
-
-/* alinhamento dos labels com os forms */
-.col-md-12{
-    display: flex;
-    align-items: center;
-}
-
-.titulo img{
-
-    height: 140px;
-}
-
-.form-button a{
-    display: flex;
-    color: #1C9228;
-    text-decoration: none;
-    justify-content: center;
-    border: 2px solid #92E3A9;
-    background-color: #92E3A9;
-    padding: 8px 30px;
-    border-radius: 20px;
-    font-weight: 600;
-}
-
-.form-button a:hover{
-    background-color: transparent;
-    color: #92E3A9;
-    }
-
-/* ------ RESPONSIVIDADE ATÉ 912PX ------ */
-@media only screen and (max-width:912px){
-    body{
+                            <div class="col-md-12">
+                                <label for="2">E-mail</label>
+                                <input class="form-control" type="email" name="email" placeholder="E-mail" required id="2">
+                                    <div class="valid-feedback">Email é válido!</div>
+                                    <div class="invalid-feedback">Email não pode ser vazio.</div>
+                            </div>    
     
-        margin: 0;
-        background: linear-gradient(162.52deg, #5CC866 -3.71%, #30D941 -3.71%, #0E3E13 100.67%);
-        width: 100vw;
-        height: 100vh;
-        font-family: 'Orbit', sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-repeat: no-repeat;
-    }
+                            <div class="col-md-12">
+                                <label for="3">Senha</label>
+                                <input class="form-control" type="password" name="password" placeholder="Senha" required id="password" id="3">
+                                <div class="valid-feedback">Senha é válida!</div>
+                                <div class="invalid-feedback">Senha não pode ser vazia.</div>
+                            </div>
+                            <div class="col-md-12 confirmar-senha">
+                                <label for="4">Confirmação <br> de Senha</label>
+                                <input class="form-control" type="password" name="password" placeholder="Confirmação de senha" required onkeyup='check();' id="4">
+                                <div class="valid-feedback">Senha é válida!</div>
+                                <div class="invalid-feedback">Senha não pode ser vazia.</div>
+                            </div> 
     
-    main{
-        display: inline-grid;
-        width: 50%;
-        max-width: 500px;
-        padding: 50px;
-        /* height: 80%; */
-        justify-items: center;
-        background-color: #249B46;
-        border-radius: 45px;
-        
-    }
-    main h3{
-        display: flex;
-        color: white;
-        font-size: 30pt;
-        margin: 0;
-    }
-
-    input.form-control {
-        align-items: right;
-        width: 250px;
-        margin-left: auto;
-    }
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label class="form-check-label">Eu concordo com os termos de aceite. </label>
+                                <div class="invalid-feedback">Por favor, concorde com os termos de aceite</div>
+                            </div>    
     
-    .titulo img {
-        display:flex;
-        width: 100px;
-    }
-
-
-    .form-button a{
-        display: flex;
-        color: #1C9228;
-        text-decoration: none;
-        justify-content: center;
-        border: 2px solid #92E3A9;
-        background-color: #92E3A9;
-        padding: 8px 30px;
-        border-radius: 20px;
-        font-weight: 600;
-    } 
-}
-
-
-/* ------ RESPONSIVIDADE ATÉ 820PX ------ */
-@media only screen and (max-width:820px){
-    body{
-    
-        margin: 0;
-        background: linear-gradient(162.52deg, #5CC866 -3.71%, #30D941 -3.71%, #0E3E13 100.67%);
-        width: 100vw;
-        height: 100vh;
-        font-family: 'Orbit', sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-repeat: no-repeat;
-    }
-    
-    main{
-        display: inline-grid;
-        width: 80vw;
-        height: 80vh;
-        justify-items: center;
-        background-color: #249B46;
-        border-radius: 45px;
-    }
-    main h1{
-        display: flex;
-        color: white;
-        font-size: 40pt;
-        margin: 0;
-    }
-    input.form-control {
-        align-items: right;
-        width: 250px;
-        margin-left: auto;
-    }
-    
-    .titulo img {
-        display:flex;
-        width: 100px;
-    }
-
-
-    .form-button a{
-        display: flex;
-        color: #1C9228;
-        text-decoration: none;
-        justify-content: center;
-        border: 2px solid #92E3A9;
-        background-color: #92E3A9;
-        padding: 8px 30px;
-        border-radius: 20px;
-        font-weight: 600;
-    } 
-}
-
-
-/* ------ RESPONSIVIDADE ATÉ 515PX ------ */
-@media only screen and (max-width:515px){
-    body{
-    
-        margin: 0;
-        background: linear-gradient(162.52deg, #5CC866 -3.71%, #30D941 -3.71%, #0E3E13 100.67%);
-        width: 100vw;
-        height: 100vh;
-        font-family: 'Orbit', sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-repeat: no-repeat;
-    }
-    
-    main{
-        display: inline-grid;
-        width: 80vw;
-        height: 80vh;
-        justify-items: center;
-        background-color: #249B46;
-        border-radius: 45px;
-    }
-    main h1{
-        display: flex;
-        color: white;
-        font-size: 50px;
-        margin: 0;
-    }
-    input.form-control {
-        align-items: right;
-        width: 180px;
-        margin-left: auto;
-    }
-    
-    .titulo img {
-        display:flex;
-        width: 100px;
-    }
-
-
-    .form-button a{
-        display: flex;
-        color: #1C9228;
-        text-decoration: none;
-        justify-content: center;
-        border: 2px solid #92E3A9;
-        background-color: #92E3A9;
-        padding: 8px 30px;
-        border-radius: 20px;
-        font-weight: 600;
-    } 
-}
-
-
-/* ------ RESPONSIVIDADE ATÉ 415PX ------ */
-@media only screen and (max-width:414px){
-    body{
-    
-        margin: 0;
-        background: linear-gradient(162.52deg, #5CC866 -3.71%, #30D941 -3.71%, #0E3E13 100.67%);
-        width: 100vw;
-        height: 100vh;
-        font-family: 'Orbit', sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-repeat: no-repeat;
-    }
-    
-    main{
-        display: inline-grid;
-        width: 80vw;
-        height: 100%;
-        justify-items: center;
-        background-color: #249B46;
-        border-radius: 45px;
-    }
-    main h3{
-        display: flex;
-        color: white;
-        font-size: 30px;
-        margin: 0;
-    }
-    input.form-control {
-        align-items: left;
-        width: 100%;
-        /* margin-left: auto; */
-    }
-    
-    .titulo img {
-        display:flex;
-        width: 100px;
-    }
-
-
-    .form-button a{
-        display: flex;
-        color: #1C9228;
-        text-decoration: none;
-        justify-content: center;
-        border: 2px solid #92E3A9;
-        background-color: #92E3A9;
-        padding: 8px 30px;
-        border-radius: 20px;
-        font-weight: 600;
-    } 
-
-    .col-md-12{
-        display:inline;
-        align-items: center;
-    }
-    .titulo{
-        display: flex;
-        align-items: center;
-    }
-/* ------ RESPONSIVIDADE ATÉ 280PX ------ */
-@media only screen and (max-width:280px){
-    body{
-    
-        margin: 0;
-        background: linear-gradient(162.52deg, #5CC866 -3.71%, #30D941 -3.71%, #0E3E13 100.67%);
-        width: 100vw;
-        height: 100%;
-        font-family: 'Orbit', sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-repeat: no-repeat;
-    }
-    
-    main{
-        display: inline-grid;
-        width: 80vw;
-        height: 100%;
-        justify-items: center;
-        background-color: #249B46;
-        border-radius: 45px;
-    }
-    main h3{
-        display: flex;
-        color: white;
-        font-size: 30px;
-        margin: 0;
-    }
-    input.form-control {
-        align-items: flex-start;
-        width: 100%;
-        margin-right: auto;
-    }
-    
-    .titulo img {
-        display:flex;
-        width: 1px;
-    }
-
-    .requires-validation{
-        display:grid;
-        align-items:start;
-    }
-
-
-    .form-button a{
-        display: flex;
-        color: #1C9228;
-        text-decoration: none;
-        justify-content: center;
-        border: 2px solid #92E3A9;
-        background-color: #92E3A9;
-        padding: 8px 30px;
-        border-radius: 20px;
-        font-weight: 600;
-        width: fit-content;
-    } 
-
-    .col-md-12{
-        display:inline;
-        align-items: center;
-    }
-    .titulo{
-        display: flex;
-        align-items: center;
-    }
-}
-}
+                            <div class="form-button">
+                                <a href="./login.html">Criar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>
