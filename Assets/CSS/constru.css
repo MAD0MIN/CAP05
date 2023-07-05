@@ -1,9 +1,4 @@
-/* *{ */
-    /* outline: 1px dotted red; */
-/* } */
-
-/* Base do css */
-
+/* ------ BASE DO CSS ------ */
 body{
     
     margin: 0;
@@ -15,15 +10,6 @@ body{
     justify-content: center;
     align-items: center;
     background-repeat: no-repeat;
-}
-
-div {
-    color:azure
-}
-
-div h3{
-    font-size: 50px;
-    text-align: center;
 }
 
 main{
@@ -38,49 +24,45 @@ main{
     
 }
 
-
-.requires-validation div{
-    /* border: red solid 1px; */
-    gap: 30px;
-    margin-top: 10px;
-}
-
-
-.form-check {
-
-    margin: 4px;
-}
-
-.titulo{
-
+main h1{
     display: flex;
-    align-items: end;
-    
+    color: white;
+    font-size: 40pt;
+    margin: 0;
+}
+#imagem {
+    display:flex;
+    width: 300px;
 }
 
-
-
-.titulo img{
-
-    height: 140px;
-}
-
-.form-button a{
+#link1{
     display: flex;
     color: #1C9228;
     text-decoration: none;
-    justify-content: center;
     border: 2px solid #92E3A9;
     background-color: #92E3A9;
     padding: 8px 30px;
     border-radius: 20px;
     font-weight: 600;
 }
+article{
+    padding: 10px;
+}
+#link2{
+    display:flex;
+    text-decoration: none;
+    color: white;
+}
 
-.form-button a:hover{
+#link1:hover{
     background-color: transparent;
     color: #92E3A9;
-    }
+}
+#link2:hover{
+    text-decoration: underline;
+    color: #92E3A9;
+}
+
 
 /* ------ RESPONSIVIDADE ATÉ 950PX ------ */
 @media only screen and (max-width:950px){
@@ -99,24 +81,22 @@ main{
     
     main{
         display: inline-grid;
-        width: 50%;
-        max-width: 500px;
-        padding: 50px;
-        /* height: 80%; */
+        width: 40vw;
+        height: 85vh;
         justify-items: center;
         background-color: #249B46;
-        border-radius: 45px;
         
+        border-radius: 45px;
     }
-    main h3{
+    main h1{
         display: flex;
         color: white;
-        font-size: 30pt;
+        font-size: 40pt;
         margin: 0;
     }
-    .titulo img {
+    #imagem {
         display:flex;
-        width: 100px;
+        width: 250px;
     }
     
     #link1{
